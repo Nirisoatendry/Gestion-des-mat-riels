@@ -7,6 +7,7 @@ import { EmpruntComponent } from './features/etudiants/emprunt/emprunt.component
 import { HistoriqueComponent } from './features/etudiants/historique/historique.component';
 import { ListesComponent } from './features/materiels/listes/listes.component';
 import { AjouterComponent } from './features/materiels/ajouter/ajouter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AjouterComponent } from './features/materiels/ajouter/ajouter.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
