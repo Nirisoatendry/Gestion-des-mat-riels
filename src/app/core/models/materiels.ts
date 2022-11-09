@@ -1,6 +1,7 @@
 export interface Action {
-    id:number
-    type:string
+    id:number,
+    type:string,
+    url:string,
     action:Function
 }
 export interface IMateriels{
@@ -9,5 +10,5 @@ export interface IMateriels{
     status : string,
     etat: string,
     description : string,
-    action:string
+    action:Action[]
 }

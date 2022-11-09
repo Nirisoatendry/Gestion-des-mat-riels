@@ -5,7 +5,7 @@
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
-    <ng-container *ngFor="let item of displayedColumns" matColumnDef={{item}}> 
+    <ng-container *ngFor="let item of displayedColumns ,let id=index" matColumnDef={{item}}> 
       <th mat-header-cell *matHeaderCellDef mat-sort-header> {{item.toUpperCase()}} </th>
       
       <ng-container *ngIf="item!='action'" >
@@ -14,9 +14,7 @@
       <ng-container *ngIf="item=='action'" >
         <td mat-cell *matCellDef="let row">
            <div class="icons">
-              <img src="assets/images/delete.svg" alt="delete">
-              <img src="assets/images/eye.svg" alt="eye">
-              <img src="assets/images/pen.svg" alt="pen">
+              <img *ngFor="let action of actions" src={{action.url}} alt={{action.id}} (click)="action.action(action.type,row)">
            </div>
         </td>
       </ng-container>

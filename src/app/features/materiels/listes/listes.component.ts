@@ -1,10 +1,11 @@
-import { IMateriels, Action } from './../../../core/models/materiels';
+import { Listactions } from './../../../core/data/listmateriel';
+import { IMateriels } from './../../../core/models/materiels';
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-
 /** Constants used to fill up our data base. */
+
 const FRUITS: string[] = [
   'blueberry',
   'lychee',
@@ -44,9 +45,10 @@ const NAMES: string[] = [
 export class ListesComponent implements OnInit , AfterViewInit {
   displayedColumns: string[] = ['id', 'type', 'status', 'etat','description','action'];
   dataSource: MatTableDataSource<IMateriels>;
-
+  
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  actions  = Listactions;
 
   constructor() {
     // Create 100 users
@@ -88,6 +90,6 @@ function createNewUser(id: number): IMateriels {
     status:"nirina",
     etat:name,
     description:name,
-    action:"fghjkl"
+    action:Listactions
   };
 }
