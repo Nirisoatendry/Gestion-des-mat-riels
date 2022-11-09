@@ -1,0 +1,43 @@
+.body-wrapper {
+  height: 100vh;
+  background-image: url("~src/assets/images/image-de-fond.jpg");
+}
+.body-login{
+  height: 100vh;
+  display:grid;
+  background-color: rgba(135,25,25,0.8);
+  align-items: center;
+  justify-content: center;
+}
+mat-card {
+  max-width: 600px;
+  text-align: center;
+  // margin-left: 35vw;
+}
+mat-card-content{
+  margin-top: 50%;
+}
+.header {
+  tex-align: center;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.forgot-password{
+  padding-left: 0px;
+}
+
+.email-input{
+  padding-top: 10px;
+}
+
+.aLink {
+  float: right;
+  padding-right: 60px;
+  text-decoration: none;
+}
+.btn-connect{
+  float: right;
+}

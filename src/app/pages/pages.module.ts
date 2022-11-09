@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {MatFormFieldModule} from '@angular/material/form-field'; 
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { LayoutModule } from '../@shared/layout/layout.module';
@@ -13,7 +13,8 @@ import { LayoutModule } from '../@shared/layout/layout.module';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    LayoutModule
+    LayoutModule,
+    MatFormFieldModule
   ]
 })
 export class PagesModule { }
