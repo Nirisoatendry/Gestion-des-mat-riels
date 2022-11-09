@@ -1,18 +1,21 @@
+@import '../../@shared/themes/styles/variable.scss';
 .body-wrapper {
   height: 100vh;
-  background-image: url("~src/assets/images/image-de-fond.jpg");
+  background: url("~src/assets/images/image-de-fond.jpg") no-repeat center;
 }
 .body-login{
   height: 100vh;
   display:grid;
-  background-color: rgba(135,25,25,0.8);
+  background-color:$red-opacity-color;
   align-items: center;
   justify-content: center;
 }
 mat-card {
   max-width: 600px;
+  width: 45vw;
   text-align: center;
   // margin-left: 35vw;
+  // padding: 0;
 }
 mat-card-content{
   margin-top: 50%;
