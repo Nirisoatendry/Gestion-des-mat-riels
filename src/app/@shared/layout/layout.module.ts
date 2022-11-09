@@ -11,7 +11,8 @@ import { SidemenuComponent } from '../sidemenu/sidemenu.component';
     SidemenuComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ],
   exports:[
     HeaderComponent,
