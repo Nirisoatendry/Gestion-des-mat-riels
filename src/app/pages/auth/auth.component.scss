@@ -5,14 +5,14 @@
 .body-login{
   height: 100vh;
   display:grid;
-  align-content: center;
   background-color: rgba(135,25,25,0.8);
-
+  align-items: center;
+  justify-content: center;
 }
 mat-card {
   max-width: 600px;
   text-align: center;
-  margin-left: 35vw;
+  // margin-left: 35vw;
 }
 mat-card-content{
   margin-top: 50%;
@@ -37,4 +37,7 @@ mat-card-content{
   float: right;
   padding-right: 60px;
   text-decoration: none;
+}
+.btn-connect{
+  float: right;
 }
