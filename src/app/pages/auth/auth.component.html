@@ -9,17 +9,17 @@
         <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
           <div class="email-input">
             <mat-form-field class="full-width" appearance="outline">
-              <mat-label>Email</mat-label>
-              <input formControlName="username" matInput required/>
+              <mat-label><mat-icon class="person">person</mat-icon></mat-label>
+              <input formControlName="username" placeholder="Nom d'utilisateur" matInput required/>
               <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">
-                Adresse e-mail requise
+                Nom d'utilisateur requis
               </mat-error>
             </mat-form-field>
           </div>
           <div>
             <mat-form-field class="full-width" appearance="outline">
-              <mat-label>Mot de passe</mat-label>
-              <input formControlName="password" matInput [type]="hide ? 'password': 'text'" required/>
+              <mat-label><mat-icon class="person">lock</mat-icon></mat-label>
+              <input formControlName="password" placeholder="Mot de passe" matInput [type]="hide ? 'password': 'text'" required/>
               <button mat-icon-button matSuffix (click)="hide = !hide"
                       [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>

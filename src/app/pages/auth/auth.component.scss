@@ -1,4 +1,10 @@
 @import '../../@shared/themes/styles/variable.scss';
+
+h1 {
+  font-weight: bolder;
+  letter-spacing: 12px;
+}
+
 .body-wrapper {
   height: 100vh;
   background: url("~src/assets/images/image-de-fond.jpg") no-repeat center;
@@ -21,7 +27,7 @@ mat-card-content{
   margin-top: 50%;
 }
 .header {
-  tex-align: center;
+  text-align: center;
 }
 
 .full-width {
@@ -30,10 +36,7 @@ mat-card-content{
 
 .forgot-password{
   padding-left: 0px;
-}
-
-.email-input{
-  padding-top: 10px;
+  background-color: #2F5A82;
 }
 
 .aLink {
@@ -44,3 +47,4 @@ mat-card-content{
 .btn-connect{
   float: right;
 }
+
