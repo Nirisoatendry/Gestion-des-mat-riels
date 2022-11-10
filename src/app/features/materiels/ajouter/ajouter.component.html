@@ -1,51 +1,50 @@
 <div class="container">
   <div class="container1">
-  <div class="formulaireAjout">
-    <form [formGroup]="ajoutForm" (ngSubmit)="onSubmit(ajoutForm.value)">
-      <div class="input">
-        <mat-form-field appearance="outline" class="appearance">
-          <mat-label>Type</mat-label>
-          <input matInput placeholder="Type" formControlName="type">
-          <mat-icon matSuffix>devices_other</mat-icon>
-          <mat-error>  
-            <span *ngIf="!ajoutForm.get('type')?.valid && ajoutForm.get('type')?.touched">{{ titleAlert }}</span>  
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input"> 
-        <mat-form-field appearance="outline" class="appearance">
-          <mat-label>Nom</mat-label>
-          <input matInput placeholder="Nom" formControlName="nom">
-          <mat-icon matSuffix>computer</mat-icon>
-          <mat-error>  
-            <span *ngIf="!ajoutForm.get('nom')?.valid && ajoutForm.get('nom')?.touched">{{ titleAlert }}</span>  
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input">
-        <mat-form-field appearance="outline" class="appearance">
-          <mat-label>Version</mat-label>
-          <input matInput placeholder="Version" formControlName="version">
-          <mat-icon matSuffix>developer_board</mat-icon>
-          <mat-error>  
-            <span *ngIf="!ajoutForm.get('version')?.valid && ajoutForm.get('version')?.touched">{{ titleAlert }}</span>  
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input">
-        <mat-form-field appearance="outline" class="appearance">
-          <mat-label>Contenu</mat-label>
-          <input matInput placeholder="Contenu" formControlName="contenu">
-          <mat-icon matSuffix>description</mat-icon>
-          <mat-error>
-            <span *ngIf="!ajoutForm.get('contenu')?.valid && ajoutForm.get('contenu')?.touched">{{ titleAlert }}</span>  
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input">
-        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!ajoutForm.valid">Submit</button>
-      </div>
-    </form>
-  </div>
+    <div class="formulaireAjout">
+      <form [formGroup]="ajoutForm" (ngSubmit)="SendData()">
+        <div class="input">
+          <mat-form-field appearance="outline" class="appearance">
+            <mat-label>Id</mat-label>
+            <input matInput placeholder="Id" formControlName="id">
+            <mat-icon matSuffix>devices_other</mat-icon>
+            <mat-error>
+              <span *ngIf="!ajoutForm.get('id')?.valid && ajoutForm.get('id')?.touched">{{ titleAlert }}</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <mat-form-field appearance="outline" class="appearance">
+            <mat-label>Type</mat-label>
+            <input matInput placeholder="Type" formControlName="type">
+            <mat-icon matSuffix>computer</mat-icon>
+            <mat-error>
+              <span *ngIf="!ajoutForm.get('type')?.valid && ajoutForm.get('type')?.touched">{{ titleAlert }}</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <mat-form-field appearance="outline" class="appearance">
+            <mat-label>Etat</mat-label>
+            <input matInput placeholder="Etat" formControlName="etat">
+            <mat-icon matSuffix>developer_board</mat-icon>
+            <mat-error>
+              <span *ngIf="!ajoutForm.get('etat')?.valid && ajoutForm.get('etat')?.touched">{{ titleAlert
+                }}</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <mat-form-field appearance="outline" class="appearance">
+            <mat-select placeholder="status" formControlName="status">
+              <mat-option value="remise">Remise</mat-option>
+              <mat-option value="emprunt">Emprunt</mat-option>
+          </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <button mat-flat-button type="submit" class="button" [disabled]="!ajoutForm.valid">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
