@@ -1,7 +1,7 @@
 <div class="container">
   <div class="container1">
   <div class="formulaireAjout">
-    <form [formGroup]="ajoutForm" (ngSubmit)="onSubmit(ajoutForm.value)">
+    <form [formGroup]="ajoutForm" (ngSubmit)="SendData()">
       <div class="input">
         <mat-form-field appearance="outline" class="appearance">
           <mat-label>Type</mat-label>
@@ -43,7 +43,7 @@
         </mat-form-field>
       </div>
       <div class="input">
-        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!ajoutForm.valid">Submit</button>
+        <button mat-flat-button type="submit" class="button" [disabled]="!ajoutForm.valid">Submit</button>
       </div>
     </form>
   </div>

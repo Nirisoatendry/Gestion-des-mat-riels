@@ -10,7 +10,7 @@
           <div class="email-input">
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Email</mat-label>
-              <input formControlName="username" matInput required/>
+              <input formControlName="username" matInput required />
               <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">
                 Adresse e-mail requise
               </mat-error>
@@ -19,9 +19,9 @@
           <div>
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Mot de passe</mat-label>
-              <input formControlName="password" matInput [type]="hide ? 'password': 'text'" required/>
-              <button mat-icon-button matSuffix (click)="hide = !hide"
-                      [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+              <input formControlName="password" matInput [type]="hide ? 'password': 'text'" required />
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+                [attr.aria-pressed]="hide">
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
               <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">
@@ -29,11 +29,11 @@
               </mat-error>
             </mat-form-field>
           </div>
-          <button mat-flat-button color="primary" type="submit" class="btn-connect" [disabled]="loginForm.invalid">Se connecter</button>
+          <button mat-flat-button color="primary" type="submit" class="btn-connect" [disabled]="loginForm.invalid">Se
+            connecter</button>
         </form>
       </mat-card-content>
     </mat-card>
 
   </div>
 </div>
-

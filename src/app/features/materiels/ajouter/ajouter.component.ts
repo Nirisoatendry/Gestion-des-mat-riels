@@ -7,19 +7,22 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./ajouter.component.scss']
 })
 export class AjouterComponent implements OnInit {
-// onSubmit(arg0: any) {
-// throw new Error('Method not implemented.');
-// }
+  // onSubmit(arg0: any) {
+  // throw new Error('Method not implemented.');
+  // }
 
   ajoutForm !: FormGroup;
   titleAlert: string = 'This field is required';
   post: any = '';
-  
 
-  constructor(private formBuilder: FormBuilder) { }
+
+  constructor(private formBuilder: FormBuilder) { 
+    
+  }
 
   ngOnInit(): void {
     this.createForm();
+    console.log(this.ajoutForm.valid)
   }
 
   createForm() {
@@ -31,8 +34,8 @@ export class AjouterComponent implements OnInit {
     });
   }
 
-  onSubmit(post: any) {
-    this.post = post;
-  }
+ SendData(){
+    console.log(this.ajoutForm.value);
+ }
 
 }
