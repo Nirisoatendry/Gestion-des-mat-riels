@@ -1,60 +1,43 @@
-<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-semibold">Collapsible</span>
-    </a>
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
-        </button>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Updates</a></li>
-            <li><a href="#" class="link-dark rounded">Reports</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark rounded">Annually</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New</a></li>
-            <li><a href="#" class="link-dark rounded">Processed</a></li>
-            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Account
-        </button>
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New...</a></li>
-            <li><a href="#" class="link-dark rounded">Profile</a></li>
-            <li><a href="#" class="link-dark rounded">Settings</a></li>
-            <li><a href="#" class="link-dark rounded">Sign out</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
+<div class="flex-shrink-0 p-3 sidemenu">
+  <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+    <img class="logo" src="../../../assets/images/laptop-solid 1.svg" alt=""  >
+    <span class="fs-5 fw-semibold color-white text-center">Tableau de bord </span>
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-5 mt-5">
+      <img src="../../../assets/images/materiels.svg" alt="" width="25px">
+      <button class="btn btn-toggle align-items-center rounded collapsed color-white" data-bs-toggle="collapse"
+        data-bs-target="#home-collapse" aria-expanded="true">
+        Matériels
+      </button>
+      <div class="collapse line" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a  class="link rounded color-white" routerLink="/pages/materiels/listes">Liste des matériels</a></li>
+          <li><a  class="link rounded color-white" routerLink="/pages/materiels/ajouter">Ajouter</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-5">
+      <img src="../../../assets/images/etudiants.svg" alt=""  width="25px">
+      <button class="btn btn-toggle align-items-center rounded collapsed color-white" data-bs-toggle="collapse"
+        data-bs-target="#dashboard-collapse" aria-expanded="false">
+        Etudiants
+      </button>
+      <div class="collapse line" id="dashboard-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a class="link rounded color-white" routerLink="/pages/etudiants/emprunt">Emprunt/remise</a></li>
+          <li><a class="link rounded color-white" routerLink="/pages/etudiants/historique">Historique</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-5">
+      <img src="../../../assets/images/historiques.svg" alt=""  width="25px">
+      <button class="btn btn-toggle align-items-center rounded collapsed color-white" data-bs-toggle="collapse"
+        data-bs-target="#orders-collapse" aria-expanded="false">
+        Historiques
+      </button>
+      <div class="collapse" id="orders-collapse" routerLink="">
+      </div>
+    </li>
+  </ul>
+</div>
