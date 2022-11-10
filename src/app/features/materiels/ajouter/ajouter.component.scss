@@ -1,0 +1,59 @@
+
+.container {
+    background-image: url("../../../../assets/images/image\(misa\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.8;
+    width: 1440px;
+    height: 100%;
+}
+
+.container1 {
+    background-color: rgba(175, 35, 35, 0.8);
+    width: 1440px;
+    height: 100%;
+    display: grid;
+    padding: 100px;
+}
+
+.formulaireAjout {
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 450px;
+    height: 350px;
+    display: grid;
+    padding: 50px;
+}
+mat-form-field{
+    width: 400px;
+    margin: auto;
+}
+.button {
+    width: 400px;
+    text-align: center;
+    height: 50px;
+    color: #ffffff;
+    background-color: rgb(95, 95, 248);
+    border: none;
+    border-radius: 5px;
+}
+.input {
+    grid-column: 1 / span 2;
+}
+
+// @media only screen and (min-width: 600px) {
+//     .formulaireAjout {
+//         background-color: #ffffff;
+//         margin-top: 10px;
+//         border-radius: 15px;
+//         width: 300px;
+//         padding: 40px;
+//         position: absolute;
+//         top: 25%;
+//     }
+//     mat-form-field{
+//         width: 250px;
+//         margin: auto;
+//     }
+// }

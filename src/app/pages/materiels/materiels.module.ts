@@ -8,22 +8,33 @@ import { ListesComponent } from './../../features/materiels/listes/listes.compon
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterielsRoutingModule } from './materiels-routing.module';
+import { MatIconModule } from '@angular/material/icon';
 import { MaterielsComponent } from './materiels.component';
+import { AjouterComponent } from 'src/app/features/materiels/ajouter/ajouter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
+
+
 @NgModule({
   declarations: [
     MaterielsComponent,
     ListesComponent,
-    HistoriqueMaterielComponent
+    HistoriqueMaterielComponent,
+    AjouterComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  imports: [
-    CommonModule,
+  imports:[
+    FormsModule,
+    MatDividerModule,
+    MatIconModule,
+    MatInputModule,
     MaterielsRoutingModule,
     MatTableModule,
+    CommonModule,
     MatPaginatorModule,
+    ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
-    MatInputModule
   ]
 })
 export class MaterielsModule { }
