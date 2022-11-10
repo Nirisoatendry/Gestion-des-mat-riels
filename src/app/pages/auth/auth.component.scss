@@ -1,0 +1,46 @@
+@import '../../@shared/themes/styles/variable.scss';
+.body-wrapper {
+  height: 100vh;
+  background: url("~src/assets/images/image-de-fond.jpg") no-repeat center;
+}
+.body-login{
+  height: 100vh;
+  display:grid;
+  background-color:$red-opacity-color;
+  align-items: center;
+  justify-content: center;
+}
+mat-card {
+  max-width: 600px;
+  width: 45vw;
+  text-align: center;
+  // margin-left: 35vw;
+  // padding: 0;
+}
+mat-card-content{
+  margin-top: 50%;
+}
+.header {
+  tex-align: center;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.forgot-password{
+  padding-left: 0px;
+}
+
+.email-input{
+  padding-top: 10px;
+}
+
+.aLink {
+  float: right;
+  padding-right: 60px;
+  text-decoration: none;
+}
+.btn-connect{
+  float: right;
+}

@@ -1,27 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmpruntComponent } from './features/etudiants/emprunt/emprunt.component';
-import { HistoriqueComponent } from './features/etudiants/historique/historique.component';
-import { ListesComponent } from './features/materiels/listes/listes.component';
-import { AjouterComponent } from './features/materiels/ajouter/ajouter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    EmpruntComponent,
-    HistoriqueComponent,
-    ListesComponent
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
