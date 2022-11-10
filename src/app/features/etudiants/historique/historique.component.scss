@@ -1,0 +1,40 @@
+@import '../../../@shared/themes/styles/variable.scss';
+.table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+}
+  table {
+    width: 100%;
+  }
+  th{
+    background-color: $blue-color;
+    color: #fff;
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 20%;
+  }
+  .icons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    img{
+      flex-basis: 10%;
+      cursor: pointer;
+    }
+  }
+  td:nth-child(1),th:nth-child(1){
+    width: 20%;
+  }
+  td:nth-child(2),th:nth-child(2){
+    width: 26%;
+  }
+  td:nth-child(3),th:nth-child(3){
+    width: 27%;
+  }
+  td:nth-child(4),th:nth-child(4){
+    width: 27%;
+  }
+ 
