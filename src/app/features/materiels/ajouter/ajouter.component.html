@@ -1,1 +1,51 @@
-<p>ajouter works!</p>
+<div class="container">
+  <div class="container1">
+  <div class="formulaireAjout">
+    <form [formGroup]="ajoutForm" (ngSubmit)="onSubmit(ajoutForm.value)">
+      <div class="input">
+        <mat-form-field appearance="outline" class="appearance">
+          <mat-label>Type</mat-label>
+          <input matInput placeholder="Type" formControlName="type">
+          <mat-icon matSuffix>devices_other</mat-icon>
+          <mat-error>  
+            <span *ngIf="!ajoutForm.get('type')?.valid && ajoutForm.get('type')?.touched">{{ titleAlert }}</span>  
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input"> 
+        <mat-form-field appearance="outline" class="appearance">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Nom" formControlName="nom">
+          <mat-icon matSuffix>computer</mat-icon>
+          <mat-error>  
+            <span *ngIf="!ajoutForm.get('nom')?.valid && ajoutForm.get('nom')?.touched">{{ titleAlert }}</span>  
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <mat-form-field appearance="outline" class="appearance">
+          <mat-label>Version</mat-label>
+          <input matInput placeholder="Version" formControlName="version">
+          <mat-icon matSuffix>developer_board</mat-icon>
+          <mat-error>  
+            <span *ngIf="!ajoutForm.get('version')?.valid && ajoutForm.get('version')?.touched">{{ titleAlert }}</span>  
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <mat-form-field appearance="outline" class="appearance">
+          <mat-label>Contenu</mat-label>
+          <input matInput placeholder="Contenu" formControlName="contenu">
+          <mat-icon matSuffix>description</mat-icon>
+          <mat-error>
+            <span *ngIf="!ajoutForm.get('contenu')?.valid && ajoutForm.get('contenu')?.touched">{{ titleAlert }}</span>  
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!ajoutForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
