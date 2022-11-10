@@ -9,6 +9,5 @@ export interface IMateriels{
     type : string,
     status : string,
     etat: string,
-    description : string,
-    action:Action[]
+    action?:Action[]
 }

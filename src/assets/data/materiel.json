@@ -1,0 +1,30 @@
+[
+    {
+        "id":0,
+        "type":"arduino",
+        "status":"ok",
+        "etat":"emprunt",
+        "description":"blabla"
+    },
+    {
+        "id":1,
+        "type":"pc",
+        "status":"ok",
+        "etat":"emprunt",
+        "description":"blabla"
+    },
+    {
+        "id":2,
+        "type":"machine",
+        "status":"ok",
+        "etat":"emprunt",
+        "description":"blabla"
+    },
+    {
+        "id":3,
+        "type":"souris",
+        "status":"ok",
+        "etat":"emprunt",
+        "description":"blabla"
+    }
+]

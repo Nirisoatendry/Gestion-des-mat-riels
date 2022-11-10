@@ -1,5 +1,5 @@
-import { Listactions } from './../../../core/data/listmateriel';
-import { IMateriels } from './../../../core/models/materiels';
+import { MaterielService } from './../../../core/services/materiel.service';
+import { IMateriels, Action } from './../../../core/models/materiels';
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -43,27 +43,28 @@ const NAMES: string[] = [
   styleUrls: ['./listes.component.scss']
 })
 export class ListesComponent implements OnInit , AfterViewInit {
-  displayedColumns: string[] = ['id', 'type', 'status', 'etat','description','action'];
-  dataSource: MatTableDataSource<IMateriels>;
-  
+  displayedColumns: string[] = ['id', 'type', 'status', 'etat','action'];
+  dataSource !: MatTableDataSource<IMateriels>;
+  materiels !: IMateriels[];  
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  actions  = Listactions;
+  actions !: Action[];
 
-  constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+  constructor( private materiel : MaterielService ) {
+    this.materiel.getAllMateriels().subscribe(data=>{
+      this.dataSource = new MatTableDataSource([...data,...data,...data]);
+      this.dataSource.paginator = this.paginator;
+     this.dataSource.sort = this.sort;
+      console.log(data);
+    });
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.materiel.getListAction().subscribe(data=>this.actions=data);
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
@@ -74,22 +75,4 @@ export class ListesComponent implements OnInit , AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-}
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): IMateriels {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
-
-  return {
-    id:id,
-    type:"kuku",
-    status:"nirina",
-    etat:name,
-    description:name,
-    action:Listactions
-  };
 }
