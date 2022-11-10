@@ -56,4 +56,7 @@ export class MaterielService {
   getAllMateriels () : Observable<IMateriels[]>{
     return this.materielApi.get<IMateriels[]>(environment.baseUrl+"materiel.json");
   }
+  getAllMaterielsHistoriques () : Observable<IMateriels[]>{
+    return this.materielApi.get<IMateriels[]>(environment.baseUrl+"historiqueMateriel.json");
+  }
 }

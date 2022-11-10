@@ -1,3 +1,4 @@
+import { HistoriqueMaterielComponent } from './../../features/materiels/historique-materiel/historique-materiel.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AjouterComponent } from 'src/app/features/materiels/ajouter/ajouter.component';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path:'listes',
     component:ListesComponent
+  },
+  {
+    path:'historique',
+    component:HistoriqueMaterielComponent
   }
 ];
 
