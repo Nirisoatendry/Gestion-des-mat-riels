@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { PagesComponent } from './pages.component';
@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path:'materiels',
         loadChildren : () => import('./materiels/materiels.module').then(m=>m.MaterielsModule)
+      },
+      {
+        path:'historique',
+        loadChildren : () => import('./historiques/historiques.module').then(m=>m.HistoriquesModule)
       }
     ]
   }
