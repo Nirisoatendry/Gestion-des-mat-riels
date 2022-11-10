@@ -1,1 +1,73 @@
-<p>emprunt works!</p>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-white">
+            Formulaire à remplir
+        </div>
+        <div class="card-body">
+            <form [formGroup]="empruntForm" (submit)="saveData()">
+                <div class="form row">
+                    <div class="col-md-6 mb-3">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" placeholder="Nom" formControlName="nom"
+                        [ngClass]="{
+                            'is-invalid':
+                            (empruntForm.get('nom').touched && empruntForm.get('nom').valid)
+                        }">
+
+                        <div class="invalid-feedback">
+                            <span *ngIf="empruntForm.get('nom').errors?.required">Merci d'entrer le nom de votre Etudiant</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Prenom</label>
+                        <input type="text" class="form-control" placeholder="Prenom">
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="col-md-6 mb-3">
+                        <label>Niveau</label>
+                        <input type="text" class="form-control" placeholder="Niveau">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Type  Materiel</label>
+                        <input type="text" class="form-control" placeholder="Type du matériel">
+                    </div>
+                </div>
+                <div class="form row mt-3">
+                    <div class="col-md-6 mb-3">
+                        <label>Id Etudiant </label>
+                        <input type="text" class="form-control" placeholder="Identité de l'étudiant">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Id Materiel</label>
+                        <input type="text" class="form-control" placeholder="Identité du matériel">
+                    </div>
+                </div>
+                <div class=" form row">
+                    <div class="input col-md-6 mb-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Selectionner Etat</mat-label>
+                            <mat-select value="selected" placeholder="status" formControlName="status">
+                                <mat-option value="remise">Remise</mat-option>
+                                <mat-option value="mprunt">Emprunt</mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="input col-md-6 mb-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Ajouter une date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+            <button type="submit" class="btn text-white" [disabled]="empruntForm.invalid">
+                    Enregistrer
+            </button>
+        </div>
+    </div>
+</div>
