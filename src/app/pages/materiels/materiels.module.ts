@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
+import {ViewMaterielsComponent} from "../../features/materiels/view-materiels/view-materiels.component";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatSelectModule } from '@angular/material/select';
     MaterielsComponent,
     ListesComponent,
     HistoriqueMaterielComponent,
-    AjouterComponent
+    AjouterComponent,
+    ViewMaterielsComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   imports:[
