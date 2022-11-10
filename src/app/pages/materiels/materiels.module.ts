@@ -13,6 +13,7 @@ import { AjouterComponent } from 'src/app/features/materiels/ajouter/ajouter.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
+    MatSelectModule,
     HttpClientModule
   ]
 })
