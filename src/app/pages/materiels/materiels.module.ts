@@ -1,3 +1,4 @@
+import { HistoriqueMaterielComponent } from './../../features/materiels/historique-materiel/historique-materiel.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
@@ -12,6 +13,7 @@ import { MaterielsComponent } from './materiels.component';
   declarations: [
     MaterielsComponent,
     ListesComponent,
+    HistoriqueMaterielComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   imports: [

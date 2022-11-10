@@ -7,7 +7,8 @@ export interface Action {
 export interface IMateriels{
     id: number,
     type : string,
-    status : string,
-    etat: string,
-    action?:Action[]
+    status?: string,
+    etat?: string,
+    date ?: Date,
+    action?:Action[] | string,
 }
