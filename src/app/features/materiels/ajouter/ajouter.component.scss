@@ -13,28 +13,33 @@
     background-color: rgba(175, 35, 35, 0.8);
     width: 1440px;
     height: 100%;
+    display: grid;
+    padding: 100px;
 }
 
 .formulaireAjout {
-    margin: auto;
     background-color: #ffffff;
     border-radius: 5px;
-    width: 600px;
+    width: 450px;
     height: 350px;
+    display: grid;
+    padding: 50px;
 }
 mat-form-field{
     width: 400px;
     margin: auto;
 }
 .button {
-    width: 75px;
+    width: 400px;
     text-align: center;
-    height: 30px;
+    height: 50px;
     color: #ffffff;
     background-color: rgb(95, 95, 248);
     border: none;
-    border-radius: 10px;
-    float: right;
+    border-radius: 5px;
+}
+.input {
+    grid-column: 1 / span 2;
 }
 
 // @media only screen and (min-width: 600px) {
