@@ -54,6 +54,9 @@
   .dropdown {
     padding: 0 20px;
     justify-self: end;
+    button{
+      width: 190px  !important;
+    }
     .dropdown-menu{
         width: 190px !important;
     }

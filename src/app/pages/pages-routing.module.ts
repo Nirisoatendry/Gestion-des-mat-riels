@@ -6,6 +6,11 @@ import { PagesComponent } from './pages.component';
 const routes: Routes = [
   {
     path:'',
+    redirectTo:'materiels/listes',
+    pathMatch:'full'
+  },
+  {
+    path:'',
     component:PagesComponent,
     children : [
       {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AuthComponent implements OnInit {
   hide = true;
   loginForm!: FormGroup;
-  constructor() {}
+  constructor(private _api : ApiService) {
+    this._api.getAllMateriels().subscribe(data=>console.log(data))
+  }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -21,6 +24,6 @@ export class AuthComponent implements OnInit {
     });
   }
   onLogin() {
-    console.log(this.loginForm.invalid);
+    this._api.auth(this.loginForm.value);
   }
 }

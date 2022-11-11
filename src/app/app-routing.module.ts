@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './pages/auth/auth.component';
-import { PagesComponent } from './pages/pages.component';
+import { ParametresComponent } from './pages/parametres/parametres.component';
 
 const routes: Routes = [
   {
@@ -17,6 +17,11 @@ const routes: Routes = [
   {
     path:'pages',
     loadChildren : ()=> import('./pages/pages.module').then(m=>m.PagesModule)
+  },
+  {
+    path:'parametres',
+    loadChildren : () => import('./pages/parametres/parametres.module').then(m=>m.ParametresModule),
+    component:ParametresComponent
   }
 ];
 

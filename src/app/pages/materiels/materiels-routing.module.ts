@@ -7,6 +7,11 @@ import { ListesComponent } from 'src/app/features/materiels/listes/listes.compon
 
 const routes: Routes = [
   {
+    path:'',
+    redirectTo :'listes',
+    pathMatch : 'full'
+  },
+  {
     path: 'ajouter',
     component:AjouterComponent
   },
