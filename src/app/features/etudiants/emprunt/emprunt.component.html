@@ -1,1 +1,99 @@
-<p>emprunt works!</p>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-white">
+            Formulaire à remplir
+        </div>
+        <div class="card-body">
+            <form [formGroup]="empruntForm" (submit)="saveData()">
+                <div class="form row">
+                    <div class="col-md-6 mb-3">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Nom</mat-label>
+                            <input formControlName="nom" placeholder="Nom" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('nom')?.errors?.['required']">
+                              Nom  requis
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Prenom</mat-label>
+                            <input formControlName="prenom" placeholder="Prenom" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('prenom')?.errors?.['required']">
+                              Prenom  requis
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="col-md-6 mb-3">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Niveau</mat-label>
+                            <input formControlName="niveau" placeholder="Niveau" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('niveau')?.errors?.['required']">
+                              Niveau
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Type Materiel</mat-label>
+                            <input formControlName="typeMateriel" placeholder="typeMateriel" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('typeMateriel')?.errors?.['required']">
+                              Nom  requis
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form row mt-3">
+                    <div class="col-md-6 mb-3">
+                        <!-- <label>Id Etudiant </label>
+                        <input type="text" class="form-control" placeholder="Identité de l'étudiant"> -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Id Etudiant</mat-label>
+                            <input formControlName="idEtudiant" placeholder="idEtudiant" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('idEtudiant')?.errors?.['required']">
+                              idEtudiant  requis
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <!-- <label>Id Materiel</label>
+                        <input type="text" class="form-control" placeholder="Identité du matériel"> -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>IdEtudiant</mat-label>
+                            <input formControlName="idMateriel" placeholder="idMateriel" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('idMateriel')?.errors?.['required']">
+                              idMateriel  requis
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class=" form row">
+                    <div class="input col-md-6 mb-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Selectionner Etat</mat-label>
+                            <mat-select value="selected" placeholder="status" formControlName="status">
+                                <mat-option value="remise">Remise</mat-option>
+                                <mat-option value="mprunt">Emprunt</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="input col-md-6 mb-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Ajouter une date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+            <button type="submit" class="btn text-white" [disabled]="empruntForm.invalid">
+                    Enregistrer
+            </button>
+        </div>
+    </div>
+</div>
