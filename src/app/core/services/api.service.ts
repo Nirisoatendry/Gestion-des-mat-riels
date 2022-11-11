@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HistoriqueG } from './../models/historiqueG';
 import { Injectable } from '@angular/core';
 import { HistoriqueE } from '../models/historique-e';
+import { ViewMateriels } from '../models/view-materiels';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,9 @@ export class ApiService {
   }
   getAllMateriels () : Observable<any> {
     return this.http.get<any>(environment.baseUrl+"/historiqueMateriel.json");
+  }
+  getAllViewMateriels () : Observable<ViewMateriels[]>{
+    return this.http.get<ViewMateriels[]>(environment.baseUrl+"viewMateriel.json");
   }
 }
 

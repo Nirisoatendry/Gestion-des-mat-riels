@@ -1,9 +1,9 @@
+import { ApiService } from './../../../core/services/api.service';
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {ViewMateriels} from "../../../core/models/view-materiels";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {ViewMaterielsService} from "../../../core/services/view-materiels.service";
 
 @Component({
   selector: 'app-view-materiels',
@@ -19,8 +19,8 @@ export class ViewMaterielsComponent implements OnInit, AfterViewInit {
 
 
 
-  constructor( private viewMateriel : ViewMaterielsService) {
-    this.viewMateriel.getAllViewMateriels().subscribe(data =>{
+  constructor( private _api : ApiService) {
+    this._api.getAllViewMateriels().subscribe(data =>{
       this.dataSource = new MatTableDataSource([...data,...data,...data]);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
