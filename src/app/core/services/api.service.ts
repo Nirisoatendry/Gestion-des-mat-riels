@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { HistoriqueG } from './../models/historiqueG';
 import { Injectable } from '@angular/core';
 import { HistoriqueE } from '../models/historique-e';
+const headers = {
 
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -15,8 +17,14 @@ export class ApiService {
     return this.http.get<HistoriqueG[]>(environment.baseUrl+"historyG.json");
   }
   getHistoryEtudiant() : Observable<HistoriqueE[]>{
-      
     return this.http.get<HistoriqueE[]>(environment.baseUrl+'historiqueEtudiant.json');
+  }
+  auth(data : any):Observable<any>{
+    console.log(data);
+    return this.http.post<any>(environment.baseUrl,data);
+  }
+  getAllMateriels () : Observable<any> {
+    return this.http.get<any>(environment.baseUrl+"getAllMaterials/");
   }
 }
 

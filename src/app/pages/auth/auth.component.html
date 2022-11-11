@@ -10,7 +10,7 @@
           <div class="email-input">
             <mat-form-field class="full-width" appearance="outline">
               <mat-label><mat-icon class="person">person</mat-icon></mat-label>
-              <input formControlName="username" placeholder="Nom d'utilisateur" matInput required/>
+              <input formControlName="username" placeholder="username" matInput required/>
               <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">
                 Nom d'utilisateur requis
               </mat-error>
@@ -19,7 +19,7 @@
           <div>
             <mat-form-field class="full-width" appearance="outline">
               <mat-label><mat-icon class="person">lock</mat-icon></mat-label>
-              <input formControlName="password" placeholder="Mot de passe" matInput [type]="hide ? 'password': 'text'" required/>
+              <input formControlName="password" placeholder="password" matInput [type]="hide ? 'password': 'text'" required/>
               <button mat-icon-button matSuffix (click)="hide = !hide"
                       [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
