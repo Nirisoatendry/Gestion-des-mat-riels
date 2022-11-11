@@ -12,7 +12,7 @@ export var list : Action[] = [
     },
     {
       id:2,
-      type:"view",
+      type:"../view",
       url:"assets/images/eye.svg",
       action:(type:string,row:IMateriels)=>{console.log(type)}
     },

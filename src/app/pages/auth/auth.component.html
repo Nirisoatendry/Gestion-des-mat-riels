@@ -10,8 +10,8 @@
           <div class="email-input">
             <mat-form-field class="full-width" appearance="outline">
               <mat-label><mat-icon class="person">person</mat-icon></mat-label>
-              <input formControlName="username" placeholder="username" matInput required/>
-              <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">
+              <input formControlName="username" placeholder="Nom d'utilisateur" matInput required/>
+              <mat-error *ngIf="loginForm.get('username')?.errors?.['girequired']">
                 Nom d'utilisateur requis
               </mat-error>
             </mat-form-field>
