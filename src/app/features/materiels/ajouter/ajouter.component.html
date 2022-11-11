@@ -1,9 +1,9 @@
 <div class="container-fluid p-0">
   <div class="container1">
     <div class="formulaireAjout">
-      <form [formGroup]="ajoutForm" (ngSubmit)="SendData()">
+      <form [formGroup]="ajoutForm" (ngSubmit)="SendData()" >
         <div class="input">
-          <mat-form-field appearance="outline" class="appearance">
+          <mat-form-field appearance="outline" class=" full-width  appearance">
             <mat-label>Id</mat-label>
             <input matInput placeholder="Id" formControlName="id">
             <mat-icon matSuffix>devices_other</mat-icon>
@@ -13,7 +13,7 @@
           </mat-form-field>
         </div>
         <div class="input">
-          <mat-form-field appearance="outline" class="appearance">
+          <mat-form-field appearance="outline" class="appearance full-width ">
             <mat-label>Type</mat-label>
             <input matInput placeholder="Type" formControlName="type">
             <mat-icon matSuffix>computer</mat-icon>
@@ -23,7 +23,7 @@
           </mat-form-field>
         </div>
         <div class="input">
-          <mat-form-field appearance="outline" class="appearance">
+          <mat-form-field appearance="outline" class="appearance full-width">
             <mat-label>Etat</mat-label>
             <input matInput placeholder="Etat" formControlName="etat">
             <mat-icon matSuffix>developer_board</mat-icon>
@@ -34,7 +34,7 @@
           </mat-form-field>
         </div>
         <div class="input">
-          <mat-form-field appearance="outline" class="appearance">
+          <mat-form-field appearance="outline" class="appearance full-width  ">
             <mat-select placeholder="status" formControlName="status">
               <mat-option value="remise">Remise</mat-option>
               <mat-option value="emprunt">Emprunt</mat-option>
@@ -42,7 +42,7 @@
           </mat-form-field>
         </div>
         <div class="input">
-          <button mat-flat-button type="submit" class="button" [disabled]="!ajoutForm.valid">Submit</button>
+          <button mat-flat-button type="submit" class="button full-width " [disabled]="!ajoutForm.valid">Submit</button>
         </div>
       </form>
     </div>

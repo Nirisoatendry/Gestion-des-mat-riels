@@ -1,11 +1,5 @@
 @import '../../../@shared/themes/styles/variable.scss';
-.table-container {
-  position: relative;
-  min-height: 200px;
-  max-height: 400px;
-  overflow: auto;
-}
-  table {
+table {
     width: 100%;
   }
   th{
