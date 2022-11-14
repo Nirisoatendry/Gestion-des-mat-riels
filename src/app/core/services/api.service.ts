@@ -19,14 +19,16 @@ export class ApiService {
     return this.http.get<HistoriqueE[]>(environment.baseUrl+'historiqueEtudiant.json');
   }
   auth(data : any):Observable<any>{
-    console.log(data);
-    return this.http.post<any>(environment.baseUrl,data);
+    return this.http.post<any>(environment.baseUrl+"adminLogin/",data);
   }
   getAllMateriels () : Observable<any> {
     return this.http.get<any>(environment.baseUrl+"/historiqueMateriel.json");
   }
-  getAllViewMateriels () : Observable<ViewMateriels[]>{
-    return this.http.get<ViewMateriels[]>(environment.baseUrl+"viewMateriel.json");
+  getAllViewMateriels (id_materiel:number) : Observable<ViewMateriels[]>{
+    return this.http.post<ViewMateriels[]>(environment.baseUrl+"getHistoryMaterial/",{id_materiel:id_materiel});
+  }
+  emprunt(data:any):Observable<any>{
+    return this.http.post(environment.baseUrl+data.status,data);
   }
 }
 

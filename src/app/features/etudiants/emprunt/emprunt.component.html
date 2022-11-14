@@ -5,7 +5,7 @@
             Formulaire à remplir
         </div>
         <div class="card-body">
-            <form [formGroup]="empruntForm" (submit)="saveData()">
+            <form [formGroup]="empruntForm" (submit)="onSubmit()">
                 <div class="form row">
                     <div class="col-md-6 mb-3">
                         <mat-form-field class="full-width" appearance="outline">
@@ -51,9 +51,9 @@
                         <!-- <label>Id Etudiant </label>
                         <input type="text" class="form-control" placeholder="Identité de l'étudiant"> -->
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Id Etudiant</mat-label>
-                            <input formControlName="idEtudiant" placeholder="idEtudiant" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('idEtudiant')?.errors?.['required']">
+                            <mat-label>RFID</mat-label>
+                            <input formControlName="RFID" placeholder="RFID" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('RFID')?.errors?.['required']">
                               idEtudiant  requis
                             </mat-error>
                         </mat-form-field>
@@ -62,9 +62,9 @@
                         <!-- <label>Id Materiel</label>
                         <input type="text" class="form-control" placeholder="Identité du matériel"> -->
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>IdEtudiant</mat-label>
-                            <input formControlName="idMateriel" placeholder="idMateriel" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('idMateriel')?.errors?.['required']">
+                            <mat-label>Id materiel</mat-label>
+                            <input formControlName="id_materiel" placeholder="id Materiel" matInput required/>
+                            <mat-error *ngIf="empruntForm.get('id_materiel')?.errors?.['required']">
                               idMateriel  requis
                             </mat-error>
                         </mat-form-field>
@@ -76,24 +76,15 @@
                             <mat-label>Selectionner Etat</mat-label>
                             <mat-select value="selected" placeholder="status" formControlName="status">
                                 <mat-option value="remise">Remise</mat-option>
-                                <mat-option value="mprunt">Emprunt</mat-option>
+                                <mat-option value="emprunt">Emprunt</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </div>
-                    <div class="input col-md-6 mb-3">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Ajouter une date</mat-label>
-                            <input matInput [matDatepicker]="picker">
-                            <mat-hint>MM/DD/YYYY</mat-hint>
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
-                    </div>
                 </div>
-            </form>
-            <button type="submit" class="btn text-white" [disabled]="empruntForm.invalid">
+                <button type="submit" class="btn text-white" [disabled]="empruntForm.invalid">
                     Enregistrer
-            </button>
+                </button>
+            </form>
         </div>
     </div>
 </div>

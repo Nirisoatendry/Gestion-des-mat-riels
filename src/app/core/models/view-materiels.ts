@@ -1,6 +1,6 @@
 export interface ViewMateriels {
   nom: string,
   prenom: string,
-  dateEmprunt: Date,
-  dateRemise: Date
+  date_remise: Date,
+  date_emprunt: Date
 }

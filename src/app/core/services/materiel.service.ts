@@ -3,18 +3,28 @@ import { Action, IMateriels } from './../models/materiels';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-export var list : Action[] = [
+import { Router } from '@angular/router';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MaterielService {
+  list : Action[] = [
     {
       id:1,
       type:"edit",
       url:"assets/images/pen.svg",
-      action:(type:string,row:IMateriels)=>{console.log(type)}
+      action:(type:string,row:IMateriels)=>{
+        this.route.navigate([`/pages/materiels/edit/${row.id}`])
+      }
     },
     {
       id:2,
       type:"../view",
       url:"assets/images/eye.svg",
-      action:(type:string,row:IMateriels)=>{console.log(type)}
+      action:(type:string,row:IMateriels)=>{
+        this.route.navigate([`/pages/materiels/listes/${row.id}`])
+      }
     },
     {
       id:3,
@@ -23,16 +33,12 @@ export var list : Action[] = [
       action:(type:string,row:IMateriels)=>{console.log(type)}
     }
   ]
-@Injectable({
-  providedIn: 'root'
-})
-export class MaterielService {
- #listAction = new BehaviorSubject<Action[]>(list);
-  constructor( private materielApi : HttpClient ) {
-    list.map((act,i)=>{
-      act.action = this.allAction()[i];
-      return act
-    })
+ #listAction = new BehaviorSubject<Action[]>(this.list);
+  constructor( private materielApi : HttpClient , private route: Router) {
+    // list.map((act,i)=>{
+    //   act.action = this.allAction()[i];
+    //   return act
+    // })
   }
   getListAction () : Observable<Action[]> {
     return this.#listAction;
@@ -54,9 +60,17 @@ export class MaterielService {
     ]
   }
   getAllMateriels () : Observable<IMateriels[]>{
+    // return this.materielApi.get<IMateriels[]>(environment.baseUrl+"getAllMaterials/");
     return this.materielApi.get<IMateriels[]>(environment.baseUrl+"materiel.json");
+  }
+  getAllMaterielsDisponible () : Observable<IMateriels[]>{
+    return this.materielApi.get<IMateriels[]>(environment.baseUrl+"getMaterialDisponible/");
   }
   getAllMaterielsHistoriques () : Observable<IMateriels[]>{
     return this.materielApi.get<IMateriels[]>(environment.baseUrl+"historiqueMateriel.json");
+  }
+  
+  addMaterial (data:IMateriels) : Observable<IMateriels> {
+    return this.materielApi.post<IMateriels>(environment.baseUrl+"materielCreate/",data);
   }
 }

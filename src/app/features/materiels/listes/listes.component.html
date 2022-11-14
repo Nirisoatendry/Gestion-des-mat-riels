@@ -14,7 +14,7 @@
       <ng-container *ngIf="item=='action'" >
         <td mat-cell *matCellDef="let row">
            <div class="icons">
-              <img *ngFor="let itemAction of actions" src={{itemAction.url}} alt={{itemAction.id}} routerLink={{itemAction.type}}>
+              <img *ngFor="let itemAction of actions" src={{itemAction.url}} alt={{itemAction.id}} (click)="itemAction.action(itemAction.type,row)">
            </div>
         </td>
       </ng-container>

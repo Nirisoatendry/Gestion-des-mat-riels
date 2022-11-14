@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl : "assets/data/"
+  // baseUrl : "http://192.168.0.101:8000/"
+  baseUrl :"assets/data/"
 };
 
 /*

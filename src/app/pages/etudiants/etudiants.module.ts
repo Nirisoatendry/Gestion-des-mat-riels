@@ -1,3 +1,4 @@
+import { LayoutModule } from './../../@shared/layout/layout.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EtudiantsRoutingModule } from './etudiants-routing.module';
@@ -28,6 +29,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
   imports: [
     CommonModule,
     EtudiantsRoutingModule,
+    LayoutModule,
     MatSelectModule,
     MatPaginatorModule,
     FormsModule,
@@ -35,7 +37,6 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatIconModule,
     MatInputModule,
     MatTableModule,
-    CommonModule,
     MatPaginatorModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,

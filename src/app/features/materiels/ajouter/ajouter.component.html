@@ -5,7 +5,7 @@
         <div class="input">
           <mat-form-field appearance="outline" class=" full-width  appearance">
             <mat-label>Id</mat-label>
-            <input matInput placeholder="Id" formControlName="id">
+            <input matInput placeholder="Id" formControlName="id" type="number">
             <mat-icon matSuffix>devices_other</mat-icon>
             <mat-error>
               <span *ngIf="!ajoutForm.get('id')?.valid && ajoutForm.get('id')?.touched">{{ titleAlert }}</span>
@@ -35,7 +35,7 @@
         </div>
         <div class="input">
           <mat-form-field appearance="outline" class="appearance full-width  ">
-            <mat-select placeholder="status" formControlName="status">
+            <mat-select placeholder="statut" formControlName="statut">
               <mat-option value="remise">Remise</mat-option>
               <mat-option value="emprunt">Emprunt</mat-option>
           </mat-select>

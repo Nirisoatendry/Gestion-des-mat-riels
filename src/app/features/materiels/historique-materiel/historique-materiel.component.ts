@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MaterielService } from './../../../core/services/materiel.service';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -22,10 +23,11 @@ export class HistoriqueMaterielComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       console.log(data);
-    })  
+    })
   }
 
   ngOnInit(): void {
+    console.log("azza");  
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

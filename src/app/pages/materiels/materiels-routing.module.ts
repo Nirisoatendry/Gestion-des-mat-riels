@@ -1,10 +1,9 @@
+import { ViewMaterielsComponent } from './../../features/materiels/view-materiels/view-materiels.component';
 import { HistoriqueMaterielComponent } from './../../features/materiels/historique-materiel/historique-materiel.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AjouterComponent } from 'src/app/features/materiels/ajouter/ajouter.component';
 import { ListesComponent } from 'src/app/features/materiels/listes/listes.component';
-import {ViewMaterielsComponent} from "../../features/materiels/view-materiels/view-materiels.component";
-
 
 const routes: Routes = [
   {
@@ -17,16 +16,24 @@ const routes: Routes = [
     component:AjouterComponent
   },
   {
+    path: 'edit/:id',
+    component:AjouterComponent
+  },
+  {
     path:'listes',
-    component:ListesComponent
+    component:ListesComponent,
+  },
+  {
+    path:'listesDisponible',
+    component:ListesComponent,
+  },
+  {
+    path:'listes/:id',
+    component:ViewMaterielsComponent
   },
   {
     path:'historique',
     component:HistoriqueMaterielComponent
-  },
-  {
-    path:'view',
-    component:ViewMaterielsComponent
   }
 ];
 

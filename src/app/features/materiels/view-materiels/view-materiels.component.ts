@@ -4,6 +4,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {ViewMateriels} from "../../../core/models/view-materiels";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-view-materiels',
@@ -11,29 +12,30 @@ import {MatSort} from "@angular/material/sort";
   styleUrls: ['./view-materiels.component.scss']
 })
 export class ViewMaterielsComponent implements OnInit, AfterViewInit {
-  displayedColumns: string [] = ['nom', 'prenom', 'dateEmprunt', 'dateRemise'];
+  displayedColumns: string [] = ['nom', 'prenom', 'date_emprunt', 'date_remise'];
   dataSource! : MatTableDataSource<ViewMateriels>;
   viewMateriels!: ViewMateriels[];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort!:MatSort;
-
-
-
-  constructor( private _api : ApiService) {
-    this._api.getAllViewMateriels().subscribe(data =>{
-      this.dataSource = new MatTableDataSource([...data,...data,...data]);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-      console.log(data);
-    });
+  id: any;
+  constructor( private _api : ApiService,private _router : ActivatedRoute) {
+    this.id = this._router.snapshot.params;
   }
 
   ngOnInit(): void {
+    // this._router.snapshot(id=>console.log('Hello ', id))
   }
 
   ngAfterViewInit() {
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
+    console.log(this.id);
+    this._api.getAllViewMateriels(this.id).subscribe(data =>{
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      console.log(data);
+    });
   }
 
   applyFilter(event: Event) {

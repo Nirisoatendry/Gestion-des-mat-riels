@@ -1,3 +1,4 @@
+import { MaterielService } from 'src/app/core/services/materiel.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -16,7 +17,7 @@ export class AjouterComponent implements OnInit {
   post: any = '';
 
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder , private _materielService : MaterielService) {
 
   }
 
@@ -30,11 +31,12 @@ export class AjouterComponent implements OnInit {
       'id': [null, Validators.required],
       'type': [null, Validators.required],
       'etat': [null, Validators.required],
-      'status': [null, Validators.required],
+      'statut': [null, Validators.required],
     });
   }
 
   SendData() {
     console.log(this.ajoutForm.value);
+    this._materielService.addMaterial(this.ajoutForm.value).subscribe(data=>console.log(data));
   }
 }

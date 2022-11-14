@@ -1,5 +1,6 @@
+import { ApiService } from 'src/app/core/services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-emprunt',
@@ -7,26 +8,29 @@ import { FormBuilder,Validators } from '@angular/forms';
   styleUrls: ['./emprunt.component.scss']
 })
 export class EmpruntComponent implements OnInit {
- empruntForm: any;
+ empruntForm !: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder , private _api : ApiService) { 
     this.empruntForm = this.fb.group({
       nom:['', Validators.required],
       prenom:['',Validators.required],
       niveau: ['',Validators.required],
       typeMateriel:['',Validators.required],
-      idEtudiant:['',Validators.required],
-      idMateriel:['',Validators.required]
+      RFID:['',Validators.required],
+      status:['',Validators.required], 
+      id_materiel:['',Validators.required]
     })
   }
 
-  saveData(){
-    if(this.empruntForm.dirty && this.empruntForm.valid){
-      alert(
-        `Name: ${this.empruntForm.value.nom}
-        Prename: ${this.empruntForm.value.prenom}`
-      )
-    }
+  onSubmit(){
+    // if(this.empruntForm.dirty && this.empruntForm.valid){
+    //   alert(
+    //     `Name: ${this.empruntForm.value.nom}
+    //     Prename: ${this.empruntForm.value.prenom}`
+    //   )
+    // }
+    console.log(this.empruntForm.value)
+    this._api.emprunt(this.empruntForm.value).subscribe(data=>console.log(data));
   }
   ngOnInit(): void {
   }
