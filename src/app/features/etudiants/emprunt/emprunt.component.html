@@ -1,90 +1,100 @@
-
-<div class="container mt-5">
-    <div class="card">
-        <div class="card-header text-white">
-            Formulaire à remplir
+<div class="">
+    <!-- <form class="search-form" (submit)="searchEtudiant()">
+        <mat-form-field class="search-full-width">
+            <span matPrefix> </span>
+            <input type="text" matInput placeholder="RFID" name= "RFID" [(ngModel)]= "RFID">
+            <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+        </mat-form-field>
+    </form> -->
+    <ng-container >
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header text-white">
+                    Formulaire à remplir
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="empruntForm" (submit)="onSubmit()">
+                        <div class="form row">
+                            <div class="col-md-6 mb-3">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Nom</mat-label>
+                                    <input formControlName="nom" placeholder="Nom" matInput required/>
+                                    <mat-error *ngIf="empruntForm.get('nom')?.errors?.['required']">
+                                      Nom  requis
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Prenom</mat-label>
+                                    <input formControlName="prenom" placeholder="Prenom" matInput required/>
+                                    <mat-error *ngIf="empruntForm.get('prenom')?.errors?.['required']">
+                                      Prenom  requis
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="form row">
+                            <div class="col-md-6 mb-3">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Niveau</mat-label>
+                                    <input formControlName="niveau" placeholder="Niveau" matInput required/>
+                                    <mat-error *ngIf="empruntForm.get('niveau')?.errors?.['required']">
+                                      Niveau
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Type Materiel</mat-label>
+                                    <input formControlName="typeMateriel" placeholder="typeMateriel" matInput required/>
+                                    <mat-error *ngIf="empruntForm.get('typeMateriel')?.errors?.['required']">
+                                      Nom  requis
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="form row mt-3">
+                            <div class="col-md-6 mb-3">
+                                <!-- <label>Id Etudiant </label>
+                                <input type="text" class="form-control" placeholder="Identité de l'étudiant"> -->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>RFID</mat-label>
+                                    <input formControlName="RFID" placeholder="RFID" matInput required/>
+                                    <mat-error *ngIf="empruntForm.get('RFID')?.errors?.['required']">
+                                      idEtudiant  requis
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <!-- <label>Id Materiel</label>
+                                <input type="text" class="form-control" placeholder="Identité du matériel"> -->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Id materiel</mat-label>
+                                    <input formControlName="id_materiel" placeholder="id Materiel" matInput required/>
+                                    <mat-error *ngIf="empruntForm.get('id_materiel')?.errors?.['required']">
+                                      idMateriel  requis
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class=" form row">
+                            <div class="input col-md-6 mb-3">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Selectionner Etat</mat-label>
+                                    <mat-select value="selected" placeholder="action" formControlName="action">
+                                        <mat-option value="remise">Remise</mat-option>
+                                        <mat-option value="emprunt">Emprunt</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn text-white" [disabled]="empruntForm.invalid">
+                            Enregistrer
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <form [formGroup]="empruntForm" (submit)="onSubmit()">
-                <div class="form row">
-                    <div class="col-md-6 mb-3">
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Nom</mat-label>
-                            <input formControlName="nom" placeholder="Nom" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('nom')?.errors?.['required']">
-                              Nom  requis
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Prenom</mat-label>
-                            <input formControlName="prenom" placeholder="Prenom" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('prenom')?.errors?.['required']">
-                              Prenom  requis
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="form row">
-                    <div class="col-md-6 mb-3">
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Niveau</mat-label>
-                            <input formControlName="niveau" placeholder="Niveau" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('niveau')?.errors?.['required']">
-                              Niveau
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Type Materiel</mat-label>
-                            <input formControlName="typeMateriel" placeholder="typeMateriel" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('typeMateriel')?.errors?.['required']">
-                              Nom  requis
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="form row mt-3">
-                    <div class="col-md-6 mb-3">
-                        <!-- <label>Id Etudiant </label>
-                        <input type="text" class="form-control" placeholder="Identité de l'étudiant"> -->
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>RFID</mat-label>
-                            <input formControlName="RFID" placeholder="RFID" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('RFID')?.errors?.['required']">
-                              idEtudiant  requis
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <!-- <label>Id Materiel</label>
-                        <input type="text" class="form-control" placeholder="Identité du matériel"> -->
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Id materiel</mat-label>
-                            <input formControlName="id_materiel" placeholder="id Materiel" matInput required/>
-                            <mat-error *ngIf="empruntForm.get('id_materiel')?.errors?.['required']">
-                              idMateriel  requis
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class=" form row">
-                    <div class="input col-md-6 mb-3">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Selectionner Etat</mat-label>
-                            <mat-select value="selected" placeholder="status" formControlName="status">
-                                <mat-option value="remise">Remise</mat-option>
-                                <mat-option value="emprunt">Emprunt</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <button type="submit" class="btn text-white" [disabled]="empruntForm.invalid">
-                    Enregistrer
-                </button>
-            </form>
-        </div>
-    </div>
+    </ng-container>
 </div>

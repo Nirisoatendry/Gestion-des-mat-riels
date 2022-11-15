@@ -1,3 +1,8 @@
+.container-all-form{
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+}
 .card-header{
     background-color:#2F5A82;
     height: 50px;
@@ -9,3 +14,14 @@
 .full-width {
     width: 100%;
   }
+.container-all-form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    .search-form{
+        .search-full-width{
+            width: 100%;
+        }
+    }
+
+}

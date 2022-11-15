@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { HistoriqueE } from 'src/app/core/models/historique-e';
+import { HistoriqueG } from 'src/app/core/models/historiqueG';
 import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
@@ -11,8 +12,8 @@ import { ApiService } from 'src/app/core/services/api.service';
   styleUrls: ['./historique.component.scss']
 })
 export class HistoriqueComponent implements OnInit {
-  displayedColumns: string[] = ['id_materiel','type','date_emprunt','date_remise'];
-  dataSource !: MatTableDataSource<HistoriqueE>;
+  displayedColumns: string[] = ['id_materiel','type','statut','date'];
+  dataSource !: MatTableDataSource<HistoriqueG>;
   etudiants !: HistoriqueE[];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort! : MatSort;

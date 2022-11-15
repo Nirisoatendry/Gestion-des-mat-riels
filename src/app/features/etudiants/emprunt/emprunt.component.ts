@@ -9,7 +9,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class EmpruntComponent implements OnInit {
  empruntForm !: FormGroup;
-
+ RFID :string ="";
   constructor(private fb: FormBuilder , private _api : ApiService) { 
     this.empruntForm = this.fb.group({
       nom:['', Validators.required],
@@ -17,7 +17,7 @@ export class EmpruntComponent implements OnInit {
       niveau: ['',Validators.required],
       typeMateriel:['',Validators.required],
       RFID:['',Validators.required],
-      status:['',Validators.required], 
+      action:['',Validators.required], 
       id_materiel:['',Validators.required]
     })
   }
@@ -30,9 +30,12 @@ export class EmpruntComponent implements OnInit {
     //   )
     // }
     console.log(this.empruntForm.value)
-    this._api.emprunt(this.empruntForm.value).subscribe(data=>console.log(data));
+    let dataForm  = {...this.empruntForm.value,id_materiel:parseInt(this.empruntForm.value.id_materiel)}
+    this._api.emprunt(dataForm).subscribe(data=>console.log(data));
   }
   ngOnInit(): void {
   }
+  searchEtudiant(){
 
+  }
 }

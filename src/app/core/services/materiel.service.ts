@@ -61,7 +61,7 @@ export class MaterielService {
   }
   getAllMateriels () : Observable<IMateriels[]>{
     // return this.materielApi.get<IMateriels[]>(environment.baseUrl+"getAllMaterials/");
-    return this.materielApi.get<IMateriels[]>(environment.baseUrl+"materiel.json");
+    return this.materielApi.get<IMateriels[]>(environment.baseUrl+"getAllMaterials/");
   }
   getAllMaterielsDisponible () : Observable<IMateriels[]>{
     return this.materielApi.get<IMateriels[]>(environment.baseUrl+"getMaterialDisponible/");

@@ -20,6 +20,7 @@ export class HistoriquesComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   constructor( private api : ApiService ) {
     this.api.getAllHistory().subscribe(data=>{
+      console.log(data);
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -28,6 +29,7 @@ export class HistoriquesComponent implements OnInit {
   }
   ngOnInit(): void {
     // this.materiel.getListAction().subscribe(data=>this.actions=data);
+    // this.api.getAllHistory().subscribe(data=>console.log(data))
   }
 
   ngAfterViewInit() {

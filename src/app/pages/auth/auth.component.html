@@ -29,6 +29,8 @@
               </mat-error>
             </mat-form-field>
           </div>
+            <mat-spinner  *ngIf="resp.statut" diameter="20" strokeWidth="10"></mat-spinner>
+            <mat-error *ngIf="resp.message=='user not found'">{{resp.connected}}</mat-error>
           <button mat-flat-button color="primary" type="submit" class="btn-connect" [disabled]="loginForm.invalid">Se
             connecter</button>
         </form>
